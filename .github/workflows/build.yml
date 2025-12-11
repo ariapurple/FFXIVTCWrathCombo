@@ -1,0 +1,59 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore WrathCombo/WrathCombo.csproj
+      
+    - name: Build
+      run: dotnet build WrathCombo/WrathCombo.csproj -c Release --no-restore
+      
+    - name: Create plugin package
+      run: |
+        mkdir release
+        copy "WrathCombo\WrathCombo\bin\Release\WrathCombo.dll" release\
+        copy "WrathCombo\WrathCombo\bin\Release\WrathCombo.json" release\
+        copy "WrathCombo\WrathCombo\bin\Release\WrathCombo.pdb" release\
+        copy "WrathCombo\WrathCombo\bin\Release\images\wrathcombo.png" release\images\
+      shell: cmd
+      
+    - name: Archive plugin
+      uses: actions/upload-artifact@v4
+      with:
+        name: WrathCombo
+        path: release/
+        
+    - name: Create release zip
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        cd release
+        7z a ../WrathCombo.zip *
+      shell: cmd
+      
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: WrathCombo.zip
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

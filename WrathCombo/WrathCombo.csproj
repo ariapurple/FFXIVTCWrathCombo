@@ -3,13 +3,13 @@
 
     <!-- Metadata -->
     <PropertyGroup>
-        <Authors>Team Wrath</Authors>
+        <Authors>Yukari</Authors>
         <Company>-</Company>
         <Version>1.0.2.26</Version>
         <!-- This is the version that will be used when pushing to the repo.-->
         <Description>XIVCombo for very lazy players</Description>
         <Copyright>Copyleft attick 2021 thanks attick UwU</Copyright>
-        <PackageProjectUrl>https://github.com/PunishXIV/WrathCombo</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/ariapurple/FFXIVTCWrathCombo</PackageProjectUrl>
         <PackageId>WrathCombo</PackageId>
         <Product>WrathCombo</Product>
     </PropertyGroup>
@@ -77,7 +77,7 @@
 
     <!-- Dalamud Packaging -->
     <ItemGroup>
-        <PackageReference Include="DalamudPackager" Version="13.0.0" />
+        <PackageReference Include="DalamudPackager" Version="12.0.0" />
         <PackageReference Include="ILRepack" Version="2.0.18" />
     </ItemGroup>
 

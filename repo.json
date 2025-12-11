@@ -1,0 +1,32 @@
+[
+  {
+    "Author": "Yukari",
+    "Name": "Wrath Combo",
+    "InternalName": "WrathCombo",
+    "DalamudApiLevel": 12,
+    "Punchline": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
+    "Description": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
+    "RepoUrl": "https://github.com/ariapurple/FFXIVTCWrathCombo",
+    "IconUrl": "https://s3.puni.sh/media/plugin/60/icon-2bwhkn3zf1f.png",
+    "Changelog": "Please check the project's GitHub or Discord for a full changelog.",
+    "Tags": [
+      "combo",
+      "wrath",
+      "wrathcombo",
+      "auto",
+      "autorotation",
+      "rotation",
+      "pve",
+      "pvp"
+    ],
+    "AssemblyVersion": "1.0.2.26",
+    "TestingAssemblyVersion": "1.0.2.26",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": "0",
+    "DownloadLinkInstall": "https://github.com/ariapurple/FFXIVTCWrathCombo/releases/latest/download/WrathCombo.zip",
+    "DownloadLinkTesting": "https://github.com/ariapurple/FFXIVTCWrathCombo/releases/latest/download/WrathCombo.zip",
+    "DownloadLinkUpdate": "https://github.com/ariapurple/FFXIVTCWrathCombo/releases/latest/download/WrathCombo.zip"
+  }
+]
